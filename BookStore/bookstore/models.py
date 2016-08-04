@@ -6,11 +6,11 @@ from django.utils import timezone
 
 class Category(models.Model):
     name = models.CharField(max_length=50,unique =True)
-    created_at=models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(auto_now = True)
+    created_at=models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default = True)
-    meta_keywords = models.CharField('Meta Keywords',max_length=255, help_text='Comma-delimited set of SEO keywords for meta tag')
-    meta_description = models.CharField("Meta Description", max_length=255,help_text='Content for description meta tag')
+    meta_keywords = models.CharField('Meta Keywords',max_length=255, help_text='Comma-delimited set of SEO keywords for meta tag', default='meta-keyword for category')
+    meta_description = models.CharField("Meta Description", max_length=255,help_text='Content for description meta tag',default='meta-description for category')
     
     class Meta:
         db_table = 'Categories'
@@ -38,29 +38,29 @@ class Book(models.Model):# Create your models here.
     image = models.ImageField(default="")
     about = models.TextField(default="No information provided for this book")
     language = models.CharField(max_length=20,default="English")
-    date_created = models.DateTimeField(default=timezone.now)
-    last_updated = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(default=timezone.now)
     quantity = models.IntegerField(default=0)
-    slug = models.SlugField(max_length=50, unique=True, help_text="Unique value for product url, created from name")
-    meta_keywords = models.CharField('Meta Keywords',max_length=255, help_text='Comma-delimited set of SEO keywords for meta tag')
-    meta_description = models.CharField("Meta Description", max_length=255,help_text='Content for description meta tag')
+    slug = models.SlugField(max_length=50,unique=True, help_text="Unique value for product url, created from name",default="No slug provided for book")
+    meta_keywords = models.CharField('Meta Keywords',max_length=255, help_text='Comma-delimited set of SEO keywords for meta tag', default='Meta_keyword for book')
+    meta_description = models.CharField("Meta Description", max_length=255,help_text='Content for description meta tag',default='meta_description for book')
     
     class Meta:
-        db_table = 'Book'
-        ordering = ['-created']
+        db_table = 'Books'
+        ordering = ['-created_at']
         
         def __unicode__(self):
             return self.name
         
-        @models.permalink
-        def get_absolute_url(self):
-            return ('catalog_product', (), {'product_slug':self.slug})
+#         @models.permalink
+#         def get_absolute_url(self):
+#             return ('catalog_category',(),{'category_slug':self.slug})
         
-        def sale_price(self):
-            if self.old_price > self.price:
-                return self.price
-            else:
-                return None
+#         def sale_price(self):
+#             if self.old_price > self.price:
+#                 return self.price
+#             else:
+#                 return None
             
             
     
@@ -71,7 +71,7 @@ class Address(models.Model):
     mobile_phone = models.CharField(max_length=13)
     home_Add = models.CharField(max_length=150)
     office_add = models.CharField(max_length=150)
-    slug = models.SlugField(max_length=50, unique=True, help_text="Unique value for product url, created from name")
+    slug = models.SlugField(max_length=50, unique=True, help_text="Unique value for product url, created from name",default="No slug provided for address")
         
     
 class Customer(models.Model):
