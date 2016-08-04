@@ -271,7 +271,12 @@ Follow us
 </div>
 <!-- main content right -->
 <div class="col-md-9">
-{{books}}
+<!-- content div -->
+<div>
+{%for book in books %}
+<p>{{book.title}}</p>
+{% endfor %}
+</div>
 </div>
 </div>
 </div>
