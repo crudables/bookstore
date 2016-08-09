@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
+from BookStore import settings
 
 
 class Category(models.Model):
@@ -35,13 +37,14 @@ class Book(models.Model):# Create your models here.
     name = models.CharField(max_length=100)
     category = models.ManyToManyField(Category)
     isbn = models.CharField(primary_key=True,max_length=15, default="0000000000")
-    image = models.ImageField(default="")
+    image = models.ImageField(upload_to=settings.MEDIA_ROOT)
     about = models.TextField(default="No information provided for this book")
     language = models.CharField(max_length=20,default="English")
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
     quantity = models.IntegerField(default=0)
-    slug = models.SlugField(max_length=50,unique=True, help_text="Unique value for product url, created from name",default="No slug provided for book")
+#     slug = models.SlugField(max_length=50,unique=True, help_text="Unique value for product url, created from name",default="No slug provided for book")
+    slug = models.CharField(max_length=200,editable = False)
     meta_keywords = models.CharField('Meta Keywords',max_length=255, help_text='Comma-delimited set of SEO keywords for meta tag', default='Meta_keyword for book')
     meta_description = models.CharField("Meta Description", max_length=255,help_text='Content for description meta tag',default='meta_description for book')
     
@@ -62,7 +65,10 @@ class Book(models.Model):# Create your models here.
 #             else:
 #                 return None
             
-            
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return models.Model.save(self, force_insert=force_insert, force_update=force_update, using=using, update_fields=update_fields)  
     
     
 class Address(models.Model):

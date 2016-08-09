@@ -274,7 +274,9 @@ Follow us
 <!-- content div -->
 <div>
 {%for book in books %}
-<p>{{book.title}}</p>
+<p>{{book.title}}
+{% load static %}
+ <p><img src="{% static" />
 {% endfor %}
 </div>
 </div>
