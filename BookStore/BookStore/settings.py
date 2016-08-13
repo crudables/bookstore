@@ -127,3 +127,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = '/home/ables/Documents/bookstore/static/images'
 MEDIA_URL = "/static/images/"
+STATICFILES_DIR=(os.path.join(os.path.dirname(__file__),'static',),)
