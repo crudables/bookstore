@@ -2,27 +2,117 @@
 <html>
 <head>
 <link href="{%static 'styles/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet" media="screen"/>
+<link href="{%static 'styles/styles.css'%}" rel="stylesheet"/>
 </head>
 <body>
 {%block content%}
-<nav class="navbar navbar-inverse navbar -fixed-top">
+<nav class="navbar navbar-fixed-top" id='nav'>
 <!-- outer container -->
 <div class="container-fluid">
 
 <div class="navbar-header">
-<a href="#" class="nav-brand">Book Store</a>
+<a href="#" class="navbar-brand navtext-color">Book Store</a>
 </div>
 
 <!-- list on nav -->
-<ul class="nav navbar-nav">
-<li class="nav-item"><a href="#">Contact Us</a></li>
-<li class="nav-item"><a href="#">Help</a></li>
- </ul>
+<form class="navbar-form navbar-left" role="search">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Search for Books"/>
+</div>
+<button type="submit" class="btn btn-default navtext-color navtext-color">Search</button>
+</form>
+
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#" class="navtext-color">Sign in</a></li>
+<li><a href="#" class="navtext-color">Order Status</a></li>
+<li><a href="#" class="navtext-color">Wish List</a></li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+Come to Us <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="#">Contact Us</a></li>
+<li class="divider" role="separator"></li>
+<li><a href="#">Help</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <!-- close outer container -->
+<div class="row">
+<div class="col-md-12 head-nav">
+<ul class="nav navbar-nav navbar-left">
+<li><a href="#" class="navtext-color">Bestsellers</a></li>
+<li><a href="#" class="navtext-color">Coming Soon</a></li>
+<li><a href="#" class="navtext-color">Highlights</a></li>
+<li><a href="#" class="navtext-color">Bargain Shop</a></li>
+</ul>
+<!-- 
+<form class="navbar-form navbar-right">
+<select name="selectCurrency" id="selectCurrency" onchange="this.form.submit()">
+			<option value="AUD"   >
+					$&nbsp;Australian Dollar</option>
+			<option value="EUR"   >
+					€&nbsp;Euro</option>
+			<option value="USD"  selected='selected' >
+					$&nbsp;US Dollar</option>
+			<option value="GBP"   >
+					£&nbsp;British Pound</option>
+			<option value="NZD"   >
+					$&nbsp;New Zealand Dollar</option>
+			<option value="SGD"   >
+					$&nbsp;Singapore Dollar</option>
+			<option value="HKD"   >
+					$&nbsp;Hong Kong Dollar</option>
+			<option value="CAD"   >
+					$&nbsp;Canadian Dollar</option>
+			<option value="CZK"   >
+					Kč&nbsp;Czech Koruna</option>
+			<option value="ILS"   >
+					₪&nbsp;Israeli Shekel</option>
+			<option value="JPY"   >
+					￥&nbsp;Japanese Yen</option>
+			<option value="NOK"   >
+					Kr&nbsp;Norwegian Krone</option>
+			<option value="PLN"   >
+					zł&nbsp;Polish Zloty</option>
+			<option value="SEK"   >
+					Kr&nbsp;Swedish Krona</option>
+			<option value="CHF"   >
+					CHF&nbsp;Swiss Franc</option>
+			<option value="THB"   >
+					฿&nbsp;Thai Baht</option>
+			<option value="DKK"   >
+					Kr&nbsp;Danish Krone</option>
+			<option value="HUF"   >
+					Ft&nbsp;Hungarian Forint</option>
+			<option value="TWD"   >
+					$&nbsp;Taiwan New Dollar</option>
+			<option value="ZAR"   >
+					R&nbsp;South African Rand</option>
+			<option value="MXN"   >
+					$&nbsp;Mexican Peso</option>
+			<option value="ARS"   >
+					$&nbsp;Argentine Peso</option>
+			<option value="CLP"   >
+					$&nbsp;Chilean Peso</option>
+			<option value="MYR"   >
+					RM&nbsp;Malaysian Ringgit</option>
+			<option value="KRW"   >
+					￦&nbsp;South Korean Won</option>
+			<option value="IDR"   >
+					Rp&nbsp;Indonesian Rupiah</option>
+			</select>
+</form> -->
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#" class="navtext-color">US$0.00</a></li>
+</ul>
+</div>
+</div>
 </nav>
+
 <h1 class='text-info'>HElli</h1>
 {% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="{%static 'styles/bootstrap/dist/js/bootstrap.min.js'%}"></script>
 </body>
 </html>
