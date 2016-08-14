@@ -2,11 +2,12 @@
 <html>
 <head>
 <link href="{%static 'styles/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet" media="screen"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
 <link href="{%static 'styles/styles.css'%}" rel="stylesheet"/>
 </head>
 <body>
 {%block content%}
-<nav class="navbar navbar-fixed-top" id='nav'>
+<nav class="navbar navbar-default" id='nav'>
 <!-- outer container -->
 <div class="container-fluid">
 
@@ -19,7 +20,7 @@
 <div class="form-group">
 <input type="text" class="form-control" placeholder="Search for Books"/>
 </div>
-<button type="submit" class="btn btn-default navtext-color navtext-color">Search</button>
+<button type="submit" class="btn btn-default navtext-color">Search</button>
 </form>
 
 <ul class="nav navbar-nav navbar-right">
@@ -46,7 +47,7 @@ Come to Us <span class="caret"></span></a>
 <li><a href="#" class="navtext-color">Highlights</a></li>
 <li><a href="#" class="navtext-color">Bargain Shop</a></li>
 </ul>
-<!-- 
+ 
 <form class="navbar-form navbar-right">
 <select name="selectCurrency" id="selectCurrency" onchange="this.form.submit()">
 			<option value="AUD"   >
@@ -102,15 +103,143 @@ Come to Us <span class="caret"></span></a>
 			<option value="IDR"   >
 					Rp&nbsp;Indonesian Rupiah</option>
 			</select>
-</form> -->
+</form>
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#" class="navtext-color">US$0.00</a></li>
+<li><a href="#" class=""><span class="item-count navtext-color"> 0 </span><span class="item-text navtext-color">Item</span><span class="glyphicon glyphicon-shopping-cart"></span></a>
 </ul>
 </div>
 </div>
 </nav>
 
-<h1 class='text-info'>HElli</h1>
+<div class="container content-wrap">
+<div class="row">
+<div class="col-md-3">
+<div>
+<ul class="category-list list-group">
+<li class="list-group-item" >
+<a href="#">Art and Photography</a>
+</li>
+<li class="list-group-item">
+<a href="audiobooks">Audio Books</a>
+</li>
+
+<li class="list-group-item">
+<a href="biography">Biography</a>
+</li>
+
+<li class="list-group-item">
+<a href="business-and-finance-law">Business and Finance Law</a>
+</li>
+
+<li class="list-group-item">
+<a href="childrens-book">Childrens' Book</a>
+</li>
+<li class="list-group-item">
+<a href="computing">Computing</a>
+</li>
+<li class="list-group-item">
+<a  href="craft-hobbies">Craft and Hobbies</a>
+</li>
+<li class="list-group-item">
+<a href="crime-thriller">Crime and Thriller</a>
+</li>
+<li class="list-group-item">
+<a href="#">Dictionaries and Languages</a>
+</li>
+<li class="list-group-item">
+<a href="#">Entertainment</a>
+</li>
+<li class="list-group-item">
+<a href="fiction">Fiction</a>
+</li>
+<li class="list-group-item">
+<a href="food-drink">Food and Drink</a>
+</li>
+<li class="list-group-item">
+<a href="graphic-novel-anime-manga">Graphics Novel, Anime and Manga</a>
+</li>
+<li class="list-group-item">
+<a href="health">Health</a>
+</li>
+<li class="list-group-item">
+<a href="history-archaeology">History and Achaeology</a>
+</li>
+<li class="list-group-item">
+<a href="home-garden">Home and Garden</a>
+</li>
+<li class="list-group-item">
+<a href="humor">Humor</a>
+</li>
+<li class="list-group-item">
+<a href="medical>Medical</a>
+</li>
+<li class="list-group-item">
+<a href="mind-body-spirit>Mind, Body and Spirit</a>
+</li>
+<li class="list-group-item">
+<a href="natural-history">Natural History</a>
+</li>
+<li class="list-group-item">
+<a href="personal-development">Personal Development</a>
+</li>
+<li class="list-group-item">
+<a href="poetry-drama>Poetry and Drama</a>
+</li>
+<li class="list-group-item">
+<a href="reference">Reference</a>
+</li>
+<li class="list-group-item">
+<a href="religion">Religion</a>
+</li>
+<li class="list-group-item">
+<a href="romance"> Romance</a>
+</li>
+<li class="list-group-item">
+<a href="sicence-geography">Science and Geography</a>
+</li>
+<li class="list-group-item">
+<a href="#">science-fiction-fantasy-horror>Science, Fiction, Fantasy and Horror</a>
+</li>
+<li class="list-group-item">
+<a href="#">society-social-science>Society and Social Sciences</a>
+</li>
+<li class="list-group-item">
+<a href="#">Sport</a>
+</li>
+<li class="list-group-item">
+<a href="#">Stationery</a>
+</li>
+
+</ul>
+</div>
+<div class="">
+<form action="newletterform">
+<div class="form-group">
+<input type="text" name="newsletterEmail" placeholder="Email Address" class="form-control">
+<div class="form-group clear-fix">
+<button class="btn btn-primary btn-sm pull-right">Sign me up for newsletter</button>
+</div>
+</div>
+</form>
+</div>
+
+<div class="sidebar-section social-section">
+<div class="side-bar-section-content">
+<ul class="social-wrap">
+<li class="purple-text bold">
+Follow us
+</li>
+<li><a href="#"><i class="icon-fb"></i></a></li>
+<li><a href="#"><i class="icon-tw"></i></a></li>
+<li><a href="#"><i class="icon-pi"></i></a></li>
+<li><a href="#"><i class="icon-pi"></i></a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
 {% endblock %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="{%static 'styles/bootstrap/dist/js/bootstrap.min.js'%}"></script>
