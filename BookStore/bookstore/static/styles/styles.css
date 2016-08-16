@@ -5,5 +5,32 @@
 	background-color:#d5e5f0
 }
 .navtext-color{
-	color: #000000
+	color: #ffffff;
+	font-size: 1.2em;
+}
+.fb-icon{
+	color:#3b5998
+}
+.tw-icon{
+	color:#6495ED
+}
+.gp-icon{
+	color:#FF0000 
+}
+.pi-icon{
+	color:#B22222 
+}
+.social-wrap{
+	padding-top: 20px;
+}
+.newsletter{
+	padding: 10px
+}
+body{
+		padding:0;
+	margin:0;
+	font: 135% 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+.newsletter-but{
+	padding-top: 5px;
 }

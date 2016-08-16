@@ -1,6 +1,7 @@
 {%load staticfiles%}
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="{%static 'styles/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet" media="screen"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
 <link href="{%static 'styles/styles.css'%}" rel="stylesheet"/>
@@ -199,10 +200,10 @@ Come to Us <span class="caret"></span></a>
 <a href="sicence-geography">Science and Geography</a>
 </li>
 <li class="list-group-item">
-<a href="#">science-fiction-fantasy-horror>Science, Fiction, Fantasy and Horror</a>
+<a href="#">Science, Fiction, Fantasy and Horror</a>
 </li>
 <li class="list-group-item">
-<a href="#">society-social-science>Society and Social Sciences</a>
+<a href="#">Society and Social Sciences</a>
 </li>
 <li class="list-group-item">
 <a href="#">Sport</a>
@@ -213,27 +214,26 @@ Come to Us <span class="caret"></span></a>
 
 </ul>
 </div>
-<div class="">
-<form action="newletterform">
+<div class="newsletter">
+<form action="newletterform" role="form">
 <div class="form-group">
 <input type="text" name="newsletterEmail" placeholder="Email Address" class="form-control">
-<div class="form-group clear-fix">
-<button class="btn btn-primary btn-sm pull-right">Sign me up for newsletter</button>
+<div class="newsletter-but pull-right">
+<button class="btn btn-danger btn-sm">Sign me up for newsletter</button>
 </div>
 </div>
 </form>
 </div>
 
-<div class="sidebar-section social-section">
-<div class="side-bar-section-content">
-<ul class="social-wrap">
-<li class="purple-text bold">
-Follow us
-</li>
-<li><a href="#"><i class="icon-fb"></i></a></li>
-<li><a href="#"><i class="icon-tw"></i></a></li>
-<li><a href="#"><i class="icon-pi"></i></a></li>
-<li><a href="#"><i class="icon-pi"></i></a></li>
+<div class="social-wrap">
+<div class="">
+<p>Follow us</p>
+<ul class="list-group list-inline">
+
+<li title="follow us on facebook"><a href="#"><i class="list-group-item fa fa-facebook-square fa-2x fb-icon" aria-hidden="true"></i></a></li>
+<li title="follow us on twitter"><a href="#"><i class="list-group-item fa fa-twitter-square fa-2x tw-icon" aria-hidden="true"></i></a></li>
+<li title="follow us on google+"><a href="#"><i class="list-group-item fa fa-google-plus-square fa-2x gp-icon" aria-hidden="true"></i></a></li>
+<li title="follow us on pinterest"><a href="#"><i class="list-group-item fa fa-pinterest fa-2x pi-icon"></i></a></li>
 </ul>
 
 </div>
