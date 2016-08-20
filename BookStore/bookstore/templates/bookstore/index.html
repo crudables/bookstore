@@ -1,11 +1,13 @@
 {% extends 'bookstore/base.html' %}
 
 {%block content%}
+{% load static %}
 
 {% for book in books %}
-
-<p>{{ book.title}}
-
+<div>
+<p>{{ book.title}}</p>
+<p> <img alt="Book Image" src="{% static 'image/9780240520933.jpg'%}"> </p>
+</div>
 {% endfor %}
 
 {% endblock %}

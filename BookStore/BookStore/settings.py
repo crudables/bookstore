@@ -125,6 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/home/ables/Documents/bookstore/static/images'
-MEDIA_URL = "/static/images/"
+#MEDIA_ROOT = '/home/ables/Documents/bookstore/static/images'
+MEDIA_ROOT = os.path.join(
+    os.path.abspath(os.path.dirname(__file__)),
+    'media',
+)
+MEDIA_URL = "/media/"
 STATICFILES_DIR=(os.path.join(os.path.dirname(__file__),'static',),)
+ADMIN_MEDIA_PREFIX = '/media/admin/'
