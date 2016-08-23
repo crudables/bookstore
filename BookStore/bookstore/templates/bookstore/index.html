@@ -3,11 +3,12 @@
 {%block content%}
 {% load static %}
 
+<div class="row">
 {% for book in books %}
-<div>
-<p>{{ book.title}}</p>
-<p> <img alt="Book Image" src="{% static 'image/9780240520933.jpg'%}"> </p>
+<div class="col-md-3">
+<div><img src="{% static 'image/9780240520933.jpg'%}"></div>
 </div>
 {% endfor %}
+</div>
 
 {% endblock %}
